@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Your To-Do List App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+        .container {
+            padding: 3rem;
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            margin: 1rem;
+        }
+        .button:hover {
+            background-color: #2980b9;
+        }
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Your To-Do List App</h1>
+    </div>
+    <div class="container">
+        <p>Manage your tasks efficiently with our simple and intuitive to-do list app.</p>
+        <p>
+            <a class="button" href="{% url 'login' %}">Login</a>
+            <a class="button" href="{% url 'register' %}">Register</a>
+        </p>
+    </div>
+    <div class="footer">
+        &copy; 2023 Your To-Do List App
+    </div>
+</body>
+</html>

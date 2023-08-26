@@ -1,0 +1,27 @@
+
+{% extends 'todolistapp/base.html' %}
+
+{% block content %}
+    <h2>Task List</h2>
+    {% if tasks %}
+        <ul>
+            {% for task in tasks %}
+                <li>
+                    <strong>{{ task.title }}</strong><br>
+                    Description: {{ task.description }}<br>
+                    Priority: {{ task.priority }}<br>
+                    Due Date: {{ task.due_date }}<br>
+                    Completed: {{ task.completed }}
+                    <form method="post" action="{% url 'delete_task' task.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tasks found.</p>
+    {% endif %}
+    <br>
+    <a href="{% url 'add_task' %}">Add Task</a>
+{% endblock %}
